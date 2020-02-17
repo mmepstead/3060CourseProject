@@ -6,7 +6,13 @@ using namespace std;
 class Authentication
 {
     public:
+        // Inputs: None
+        // User Inputs: String username, String password
+        // Outpus: User (To be set as the current user)
         User login();
+        // Inputs: None
+        // User Inputs: Confirmation of logout
+        // Outputs: None simply sets the current user to null
         void logout();
 };
 #endif
