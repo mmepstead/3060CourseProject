@@ -6,23 +6,24 @@ using namespace std;
 class Item 
 {
 	private:
-		String Name, CurrentHighestUser;
+		string Name, CurrentHighestUser;
 		int TimeLeft;
 		float MinBid, CurrentHighestBid;
 	public :
 	
 		//constructor
-		Item(String N, int TL, float MB, float CHB, String CHU)
+		// Inputs: Item name, Time left, Minimum bid, Current highest bid(value), Current highest bidder (User)
+		Item(string N, int TL, float MB, float CHB, string CHU)
 		{
-			String Name = N;
+			string Name = N;
 			int TimeLeft = TL;
 			float MinBid = MB;
 			float CurrentHighestBid = CHB;
-			String CurrentHighestUser = CHU;
+			string CurrentHighestUser = CHU;
 		};
 		
 		//simple getter & setter functions
-		String getName()
+		string getName()
 		{
 			return Name;
 		}
@@ -36,13 +37,13 @@ class Item
 		}
 		float getCurrentHighestBid()
 		{
-			return CurrentHighestBid
+			return CurrentHighestBid;
 		}
-		String getCurrentHighestUser()
+		string getCurrentHighestUser()
 		{
-			return CurrentHighestUser
+			return CurrentHighestUser;
 		}
-		void setName(String N)
+		void setName(string N)
 		{
 			Name = N;
 		}
@@ -58,9 +59,9 @@ class Item
 		{
 			CurrentHighestBid = CHB;
 		}
-		void setCurrentHighestUser(String CHU)
+		void setCurrentHighestUser(string CHU)
 		{
 			CurrentHighestUser = CHU;
 		}
 		
-}
+};

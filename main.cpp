@@ -1,8 +1,8 @@
 // Main class to run the std in loop that will take the user inputs
 #include <iostream>
 #include <string>
-#include "Authentication.h"
-#include "User.h"
+#include "./Users/User.h"
+#include "./Authentication/Authentication.h"
 using namespace std;
 
 int main()
