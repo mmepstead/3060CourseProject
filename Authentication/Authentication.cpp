@@ -1,47 +1,45 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "User.h"
 #include "Authentication.h"
+
 using namespace std;
 //Class to handle all user authentication and logins
 // Inputs: None
 // User Inputs: String username, String password
 // Outpus: User (To be set as the current user)
-User Authentication::login()
+
+
+int Authentication::login(string username)
 {
     string line;
-    string username;
-    User loggedInUser;
     ifstream myfile("currentUsers.txt");
+
     if (myfile.is_open())
     {
-        //Get username from user
-        cout << "Enter Username: ";
-        cin >> username;
         //Loop through currentUsers file
         while (getline(myfile, line))
         {
             //Check if username is in the file
             if (line.substr(0, line.find(" ")).compare(username) == 0)
             {
-                loggedInUser.setUsername(username);
                 cout << "Successfully Logged In!" << endl;
+                return (line.substr(line.find(" ") + 1, 1))[0] - '0';
             }
         }
-        //If no user was successfully logged in
-        if (loggedInUser.getUsername().compare("") == 0)
-        {
-            cout << "Error: A user with that username does not exist" << endl;
-        }
+
+        cout << "Error: A user with that username does not exist" << endl;
+        return 0;
         myfile.close();
     }
     else
     {
         cout << "Unable to open file" << endl;
+        return 0;
     }
-    return loggedInUser;
-
 }
+
 
 // Inputs: None
 // User Inputs: Confirmation of logout
