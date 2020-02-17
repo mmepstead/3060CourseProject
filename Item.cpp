@@ -60,7 +60,7 @@ class Item
 		}
 		void setCurrentHighestUser(String CHU)
 		{
-			return CurrentHighestUser
+			return CurrentHighestUser;
 		}
 		
 }
