@@ -56,11 +56,11 @@ class Item
 		}
 		void setCurrentHighestBid(float CHB)
 		{
-			CurrentHighestBid = CHU;
+			CurrentHighestBid = CHB;
 		}
 		void setCurrentHighestUser(String CHU)
 		{
-			return CurrentHighestUser;
+			CurrentHighestUser = CHU;
 		}
 		
 }
