@@ -9,7 +9,7 @@ class Authentication
         // Inputs: None
         // User Inputs: String username, String password
         // Outpus: User (To be set as the current user)
-        User login();
+        int login(string username);
         // Inputs: None
         // User Inputs: Confirmation of logout
         // Outputs: None simply sets the current user to null

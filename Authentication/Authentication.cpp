@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "User.h"
+#include "../Users/User.h"
 #include "Authentication.h"
 
 using namespace std;

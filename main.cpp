@@ -17,6 +17,10 @@ currentUsers.txt
 dailyTransactionFile.txt
 avalibleItems.txt
 
+Running this program
+    Run the commands:
+     make
+     ./auction
 */
 // Main class to run the std in loop that will take the user inputs
 #include <iostream>
