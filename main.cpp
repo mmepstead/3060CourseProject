@@ -3,10 +3,10 @@
 #include <string>
 #include "./Authentication/Authentication.h"
 #include "./Users/User.h"
-#include "/Users/BuyStandard/BuyStandard.h"
-#include "/Users/SellStandard/SellStandard.h"
-#include "/Users/FullStandard/FullStandard.h"
-#include "/Users/Admin/Admin.h"
+#include "./Users/BuyStandard/BuyStandard.h"
+#include "./Users/SellStandard/SellStandard.h"
+#include "./Users/FullStandard/FullStandard.h"
+#include "./Users/Admin/Admin.h"
 
 using namespace std;
 
@@ -16,6 +16,8 @@ void state2Sell(string username);
 void state2Full(string username);
 void state2Admin(string username);
 
+// Inputs: None
+// Outputs: Int
 int main()
 {
     state0();
@@ -26,7 +28,8 @@ int main()
 //State 0 = Logged out
 //State 1 = Exit state
 //State 2 = Logged in state
-
+// Inputs: None
+// Outputs: None
 void state0()
 {
     int transaction;
@@ -48,12 +51,12 @@ void state0()
         //Make choice based on user input
         switch (transaction)
         {
-        //Exit is chosen 
+        //Exit is chosen
         case 0: loop = false;
             break;
 
          //Login was chosen
-        case 1: 
+        case 1:
             Authentication auth;//Create instance of authentication class
             cout << "Enter Username: ";
             cin >> username;
@@ -81,14 +84,16 @@ void state0()
 
             break;
 
-            //Default case 
-            default: 
+            //Default case
+            default:
                 break;
         }
     }
 }
 
 
+// Inputs: String username for initalizing type of account
+// Outputs: None
 void state2Buy(string username)
 {
     BuyStandard user(username, 0);
@@ -117,6 +122,8 @@ void state2Buy(string username)
     }
 }
 
+// Inputs: String username for initalizing type of account
+// Outputs: None
 void state2Sell(string username)
 {
     SellStandard user(username, 0);
@@ -145,6 +152,8 @@ void state2Sell(string username)
     }
 }
 
+// Inputs: String username for initalizing type of account
+// Outputs: None
 void state2Full(string username)
 {
     FullStandard user(username, 0);
@@ -174,6 +183,8 @@ void state2Full(string username)
     }
 }
 
+// Inputs: String username for initalizing type of account
+// Outputs: None
 void state2Admin(string username)
 {
     Admin user(username, 0);
@@ -205,4 +216,3 @@ void state2Admin(string username)
         }
     }
 }
-
