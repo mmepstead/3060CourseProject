@@ -1,3 +1,23 @@
+/*
+Date: 2020-02-17
+
+Description: This program is made to be an auction service. Users
+can make accounts based on their intentions(Buy/sell). Then users
+can put items up for sale and other users can bid on them. Other
+functions of this service are refunds and adding credit to the
+program.
+
+//Input Files:
+currentUsers.txt
+dailyTransactionFile.txt
+avalibleItems.txt
+
+//Output Files:
+currentUsers.txt
+dailyTransactionFile.txt
+avalibleItems.txt
+
+*/
 // Main class to run the std in loop that will take the user inputs
 #include <iostream>
 #include <string>
