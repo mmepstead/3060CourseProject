@@ -40,10 +40,12 @@ void state2Sell(string username);
 void state2Full(string username);
 void state2Admin(string username);
 
+string current_users_file;
 // Inputs: None
 // Outputs: Int
-int main()
+int main(int argc, char *argv[])
 {
+    current_users_file = argv[1];
     state0();
     return 0;
 }
@@ -84,7 +86,7 @@ void state0()
             Authentication auth;//Create instance of authentication class
             cout << "Enter Username: ";
             cin >> username;
-            accntType = auth.login(username);//Call login function
+            accntType = auth.login(username, current_users_file);//Call login function
 
             switch (accntType)
             {
