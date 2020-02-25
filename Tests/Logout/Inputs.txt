@@ -1,0 +1,3 @@
+# Logout Test 1: Only accepted after login
+Logout('loggedInAccount')
+Logout('loggedOutAccount')

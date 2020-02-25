@@ -1,0 +1,10 @@
+# All tests should be run with every account type
+
+# Refund Test 1: Both buyer and seller must exist
+Refund('existingBuyer', 'existingSeller', 500)
+Refund('nonexistantBuyer', 'existingSeller', 500)
+Refund('existingBuyer', 'nonexistantSeller', 500)
+Refund('nonexistantBuyer', 'nonexistantSeller', 500)
+
+# Refund Test 2: Buyer account can't go over 999,999
+Refund('fullBuyer', 'seller', 600)

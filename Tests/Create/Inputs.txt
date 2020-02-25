@@ -1,0 +1,7 @@
+# All tests performed in logged in admin account
+
+# Create Test 1: Name limited to 15 chars
+Create('thisusernameover15characters')
+
+# Create Test 2: Unique usernames
+Create('alreadyTakenUsername')

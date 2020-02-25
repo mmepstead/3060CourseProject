@@ -1,0 +1,20 @@
+# All tests run on admin, full-standard, and sell-standard accounts
+
+# Advertise Test 1: Max price
+Advertise('item', 10000, 1)
+Advertise('item', 999.99, 1)
+Advertise('item', 'chars', 1)
+Advertise('item', -1000, 1)
+
+# Advertise Test 2: Max item name
+Adverstise('thisItemNameIsOverTwentyFiveCharacters', 1, 1)
+Advertise('validItemName', 1, 1)
+
+# Advertise Test 3: Max auction days
+Advertise('item', 1, 101)
+Advertise('item', 1, 100)
+Advertise('item', 1, -100)
+Advertise('item', 1, 'chars')
+
+# Advertise Test 4: One advertisement per session
+Advertise('secondItem', 1, 1)

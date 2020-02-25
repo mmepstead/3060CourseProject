@@ -1,0 +1,12 @@
+# All tests performed on admin account 
+
+# Delete Test 1: Username must be of existing user
+Delete('existingUser')
+Delete('nonexistantUser')
+Delete('currentUser')
+
+# Delete Test 2: No more transaction on a deleted user's items
+Bid('itemOfDeletedUser')
+
+# Delete Test 3: Existing bids deleted
+Delete('existingUser')
