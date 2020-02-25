@@ -23,13 +23,14 @@ int Authentication::login(string username, string current_users_file)
             if (line.substr(0, line.find(" ")).compare(username) == 0)
             {
                 cout << "Successfully Logged In!" << endl;
+                myfile.close();
                 return (line.substr(line.find(" ") + 1, 1))[0] - '0';
             }
         }
 
         cout << "Error: A user with that username does not exist" << endl;
-        return 0;
         myfile.close();
+        return 0;
     }
     else
     {
