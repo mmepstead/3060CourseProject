@@ -9,12 +9,10 @@ using namespace std;
 // Inputs: None
 // User Inputs: String username, String password
 // Outpus: User (To be set as the current user)
-
-
-int Authentication::login(string username)
+int Authentication::login(string username, string current_users_file)
 {
     string line;
-    ifstream myfile("currentUsers.txt");
+    ifstream myfile(current_users_file.c_str());
 
     if (myfile.is_open())
     {
