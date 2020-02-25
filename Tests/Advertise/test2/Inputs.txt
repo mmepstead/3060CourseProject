@@ -1,0 +1,13 @@
+1
+testusername3
+4
+10000
+4
+testingchars
+4
+-1000
+4
+999.99
+1
+1
+0

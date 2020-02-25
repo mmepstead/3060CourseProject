@@ -1,0 +1,10 @@
+1
+testusername3
+4
+Itemnamethatisover25characterslong
+4
+validItemName
+1
+1
+1
+0

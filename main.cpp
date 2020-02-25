@@ -105,7 +105,6 @@ void state0()
                 state2Admin(username);
                 break;
             default:
-                cout << "Error: Invalid transaction code";
                 break;
             }
 
