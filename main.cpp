@@ -105,6 +105,7 @@ void state0()
                 state2Admin(username);
                 break;
             default:
+                cout << "Error: Invalid transaction code";
                 break;
             }
 
@@ -112,6 +113,7 @@ void state0()
 
             //Default case
             default:
+                cout << "Error: Invalid transaction code";
                 break;
         }
     }
@@ -144,6 +146,10 @@ void state2Buy(string username)
         {
         case 1:  loop = false;
             break;
+        //Default case
+        default:
+            cout << "Error: Invalid transaction code";
+            break;
         }
     }
 }
@@ -173,6 +179,11 @@ void state2Sell(string username)
         switch (transaction)
         {
         case 1:  loop = false;
+            break;
+
+        //Default case
+        default:
+            cout << "Error: Invalid transaction code";
             break;
         }
     }
@@ -204,6 +215,11 @@ void state2Full(string username)
         switch (transaction)
         {
         case 1:  loop = false;
+            break;
+
+        //Default case
+        default:
+            cout << "Error: Invalid transaction code";
             break;
         }
     }
@@ -238,6 +254,11 @@ void state2Admin(string username)
         switch (transaction)
         {
         case 1:  loop = false;
+            break;
+        
+        //Default case
+        default:
+            cout << "Error: Invalid transaction code";
             break;
         }
     }
