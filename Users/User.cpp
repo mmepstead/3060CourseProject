@@ -45,6 +45,25 @@ using namespace std;
 			cout << "Credit of " << credit << " successfully added to account " << getUsername() << endl;
 			creditBalance += credit;
 			cout << "Current balance: " << creditBalance << endl;
+			TransactionWriter writer;
+			map<string, string> values;
+			values.insert(pair<string, string>("username", getUsername()));
+			values.insert(pair<string, string>("credit_balance", to_string(creditBalance)));
+			switch(userType) {
+				case 1:
+					values.insert(pair<string, string>("user_type", "BS"));
+					break;
+				case 2:
+					values.insert(pair<string, string>("user_type", "SS"));
+					break;
+				case 3:
+					values.insert(pair<string, string>("user_type", "FS"));
+					break;
+				case 4:
+					values.insert(pair<string, string>("user_type", "AA"));
+					break; 
+			} 
+			writer.dailyTransactionWriter(6, values);
 			return creditBalance;
 		}
 }

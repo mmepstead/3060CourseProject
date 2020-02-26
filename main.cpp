@@ -190,6 +190,14 @@ void state2Sell(string username)
         {
         case 1:  loop = false;
             break;
+        case 3:
+        { 
+            float credit;
+            cout << "Please enter the amount of credit you want to add to your account" << endl;
+            cin >> credit;
+            user.addCredit(credit);
+            break;
+        }
         case 4:
             advertiseItem(user);
             break;
@@ -228,6 +236,14 @@ void state2Full(string username)
         {
         case 1:  loop = false;
             break;
+        case 3:
+        { 
+            float credit;
+            cout << "Please enter the amount of credit you want to add to your account" << endl;
+            cin >> credit;
+            user.addCredit(credit);
+            break;
+        }
         case 5:
             advertiseItem(user);
             break;
