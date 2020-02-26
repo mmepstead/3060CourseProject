@@ -1,7 +1,7 @@
 #include "TransactionWriter.h"
 #include <iostream>
 #include <fstream>
-
+#include <string>
 string TransactionWriter::stringFormatter(string input, int limit) 
 {
     string result = input;
@@ -25,9 +25,12 @@ string TransactionWriter::numberFormatter(string input, int limit)
 // Outputs: None
 void TransactionWriter::dailyTransactionWriter(int transactionType, map<string, string> values) 
 {
+    string line = "";
     ofstream myfile;
-    myfile.open ("dailyTransactionFile.txt");
-    string line = transactionType + " ";
+    myfile.open ("dailyTransactionFile.txt", ios_base::app);
+    line += "0";
+    line += to_string(transactionType);
+    line += " ";
     switch (transactionType)
     {
         case 3: 
@@ -37,7 +40,7 @@ void TransactionWriter::dailyTransactionWriter(int transactionType, map<string, 
             line += " ";
             line += numberFormatter(values.at("days"),3);
             line += " ";
-            line += stringFormatter(values.at("minimum_bid"), 5);
+            line += numberFormatter(values.at("minimum_bid"), 6);
             line += "\n";
             break;
         case 4: 
@@ -47,7 +50,7 @@ void TransactionWriter::dailyTransactionWriter(int transactionType, map<string, 
             line += " ";
             line += stringFormatter(values.at("buyer"), 15);
             line += " ";
-            line += stringFormatter(values.at("bid"), 5);
+            line += numberFormatter(values.at("bid"), 6);
             line += "\n";
             break;
         case 5: 
@@ -55,7 +58,7 @@ void TransactionWriter::dailyTransactionWriter(int transactionType, map<string, 
             line += " ";
             line += stringFormatter(values.at("seller"), 15);
             line += " ";
-            line += numberFormatter(values.at("refund_credit"),9);
+            line += numberFormatter(values.at("refund_credit"),10);
             line += "\n";
             break;
         default:
@@ -63,7 +66,7 @@ void TransactionWriter::dailyTransactionWriter(int transactionType, map<string, 
             line += " ";
             line += values.at("user_type");
             line += " ";
-            line += numberFormatter(values.at("credit_balance"),9);
+            line += numberFormatter(values.at("credit_balance"),10);
             line += "\n";
             break;
     }

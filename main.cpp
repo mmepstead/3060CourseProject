@@ -25,6 +25,7 @@ Running this program
 // Main class to run the std in loop that will take the user inputs
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "./Authentication/Authentication.h"
 #include "./Users/User.h"
 #include "./Users/BuyStandard/BuyStandard.h"
@@ -39,7 +40,9 @@ void state2Buy(string username);
 void state2Sell(string username);
 void state2Full(string username);
 void state2Admin(string username);
-
+void advertiseItem(User user);
+bool itemNameTaken(string itemName);
+bool userExists(string username);
 string current_users_file;
 // Inputs: None
 // Outputs: Int
@@ -187,7 +190,9 @@ void state2Sell(string username)
         {
         case 1:  loop = false;
             break;
-
+        case 4:
+            advertiseItem(user);
+            break;
         //Default case
         default:
             cout << "Error: Invalid transaction code" << endl;
@@ -223,7 +228,9 @@ void state2Full(string username)
         {
         case 1:  loop = false;
             break;
-
+        case 5:
+            advertiseItem(user);
+            break;
         //Default case
         default:
             cout << "Error: Invalid transaction code" << endl;
@@ -269,17 +276,95 @@ void state2Admin(string username)
             cout << "Enter username of user to add credit to:" << endl;
             cin >> username;
             // Quick way to check if user exists
-            if(auth.login(username, current_users_file) != 0) {
+            if(userExists(username)) {
                 cout << "Enter amount of credit to add:" << endl;
                 cin >> credit;
                 user.addCredit(username, credit);
             }
             break;
         }
+        case 5:
+            advertiseItem(user);
+            break;
         //Default case
         default:
             cout << "Error: Invalid transaction code" << endl;
             break;
         }
     }
+}
+
+bool userExists(string username) 
+{
+    string line;
+    ifstream myfile(current_users_file.c_str());
+
+    if (myfile.is_open())
+    {
+        //Loop through currentUsers file
+        while (getline(myfile, line))
+        {
+            //Check if username is in the file
+            if (line.substr(0, line.find(" ")).compare(username) == 0)
+            {
+                myfile.close();
+                return true;
+            }
+        }
+        return false;
+        myfile.close();
+    }
+    cout << "Error: Unable to open file" << endl;
+}
+
+bool itemNameTaken(string itemName) 
+{
+    string line;
+    ifstream myfile("availableItems.txt");
+
+    if (myfile.is_open())
+    {
+        //Loop through currentUsers file
+        while (getline(myfile, line))
+        {
+            //Check if username is in the file
+            if (line.substr(0, line.find(" ")).compare(itemName) == 0)
+            {
+                myfile.close();
+                return true;
+            }
+        }
+        return false;
+        myfile.close();
+    }
+    cout << "Error: Unable to open file" << endl;
+}
+void advertiseItem(User user) 
+{
+    string itemName;
+    float minBid;
+    int days;
+    cout << "Enter the name of the item you want to advertise:" << endl;
+    cin >> itemName;
+    if(itemNameTaken(itemName))
+    {
+        cout << "Error: An item with that name already exists" << endl;
+        return;
+    }
+    cout << "Enter minimum bid for the item:" << endl;
+    cin >> minBid;
+    if(minBid < 0 || minBid > 999.99) 
+    {
+        cout << "Error: Minimum bid must be between $0 and $999.99" << endl;
+        return;
+    }
+    cout << "Enter number of days for item to be auctioned:" << endl;
+    cin >> days;
+    if(days < 0 || days > 100)
+    {
+        cout << "Error: Number of days must be between 0 and 100" << endl;
+        return;
+    }
+    user.advertise(itemName, minBid, days);
+    return;
 }

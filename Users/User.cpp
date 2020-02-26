@@ -2,6 +2,8 @@
 #include<string>
 #include<iostream>
 #include "User.h"
+#include <map> 
+#include "../TransactionWriter/TransactionWriter.h"
 using namespace std;
 
 	// Inputs: String buyer: username of buyer, String seller: username of seller,
@@ -11,8 +13,19 @@ using namespace std;
 	{
 
 	}
-
-
+	// Inputs: String itemName: name of item, float minBid: minimum bid
+	// int days: number of days aution lasts
+	// Outputs: None
+	void User::advertise(string itemName, float minBid, int days) {
+		TransactionWriter writer;
+		map<string, string> values;
+		values.insert(pair<string, string>("item", itemName));
+		values.insert(pair<string, string>("seller", username)); 
+		values.insert(pair<string, string>("days", to_string(days)));
+		values.insert(pair<string, string>("minimum_bid", to_string(minBid).substr(0, to_string(minBid).find(".")+3)));   
+		writer.dailyTransactionWriter(3, values);
+		cout << "Successfully advertised item!" << endl;
+	}
 	// Inputs: float for amount of credit to add
 	// Outputs: float for new user balance
 	float User::addCredit(float credit)
