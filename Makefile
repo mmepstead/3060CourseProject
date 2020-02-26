@@ -1,3 +1,7 @@
 # Makefile
-auction: ./Authentication/Authentication.cpp main.cpp
-	g++ -o auction ./Authentication/Authentication.cpp main.cpp 
+auction: ./Authentication/Authentication.cpp ./Users/User.cpp ./Users/Admin/Admin.cpp ./Users/BuyStandard/BuyStandard.cpp \
+./Users/SellStandard/SellStandard.cpp ./Users/FullStandard/FullStandard.cpp \
+./TransactionWriter/TransactionWriter.cpp main.cpp
+	g++ -o auction ./Authentication/Authentication.cpp ./Users/Admin/Admin.cpp ./Users/BuyStandard/BuyStandard.cpp \
+./Users/SellStandard/SellStandard.cpp ./Users/FullStandard/FullStandard.cpp \
+./Users/User.cpp ./TransactionWriter/TransactionWriter.cpp main.cpp

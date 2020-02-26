@@ -19,7 +19,7 @@ using namespace std;
 	{
 		if (credit <= 0 || credit > 999.99)
 		{
-			cout << "Invalid amont." << endl;
+			cout << "Invalid amount." << endl;
 			return 0;
 		}
 		else if ((creditBalance + credit) > 999.99)
@@ -29,7 +29,9 @@ using namespace std;
 		}
 		else
 		{
-			cout << "Credit of " << credit << " successfully added to account" << getUsername() << endl;
-			return credit + creditBalance;
+			cout << "Credit of " << credit << " successfully added to account " << getUsername() << endl;
+			creditBalance += credit;
+			cout << "Current balance: " << creditBalance << endl;
+			return creditBalance;
 		}
 }

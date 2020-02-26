@@ -135,7 +135,7 @@ void state2Buy(string username)
         cout << "Refund -- 2 " << endl;
         cout << "Add credit -- 3 " << endl;
         cout << "Bid -- 4 " << endl;
-        cout << "-->";
+        cout << "-->"<< endl;
 
         //Take user input
         cin >> transaction;
@@ -145,6 +145,14 @@ void state2Buy(string username)
         {
         case 1:  loop = false;
             break;
+        case 3:
+        { 
+            float credit;
+            cout << "Please enter the amount of credit you want to add to your account" << endl;
+            cin >> credit;
+            user.addCredit(credit);
+            break;
+        }
         //Default case
         default:
             cout << "Error: Invalid transaction code" << endl;
@@ -243,7 +251,6 @@ void state2Admin(string username)
         cout << "Advertise -- 5 " << endl;
         cout << "Create User -- 6 " << endl;
         cout << "Delete User -- 7 " << endl;
-        cout << "Add Credit to user account -- 4 " << endl;
         cout << "-->";
 
         //Take user input
@@ -254,7 +261,21 @@ void state2Admin(string username)
         {
         case 1:  loop = false;
             break;
-        
+        case 3:
+        {
+            string username;
+            float credit;
+            Authentication auth;
+            cout << "Enter username of user to add credit to:" << endl;
+            cin >> username;
+            // Quick way to check if user exists
+            if(auth.login(username, current_users_file) != 0) {
+                cout << "Enter amount of credit to add:" << endl;
+                cin >> credit;
+                user.addCredit(username, credit);
+            }
+            break;
+        }
         //Default case
         default:
             cout << "Error: Invalid transaction code" << endl;

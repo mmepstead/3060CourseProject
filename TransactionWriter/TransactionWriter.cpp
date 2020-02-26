@@ -1,0 +1,86 @@
+#include "TransactionWriter.h"
+#include <iostream>
+#include <fstream>
+
+string TransactionWriter::stringFormatter(string input, int limit) 
+{
+    string result = input;
+    for(int i = limit-input.length(); i > 0; i-=1)
+    {
+        result += " ";
+    }
+    return result;
+}
+string TransactionWriter::numberFormatter(string input, int limit) 
+{
+    string result = input;
+    for(int i = limit-input.length(); i > 0; i-=1)
+    {
+        result = "0" + result;
+    }
+    return result;
+}
+// Inputs: Transaction type(1-create, 2-delete etc.),  
+//  values: map containing the values for fields like username and others
+// Outputs: None
+void TransactionWriter::dailyTransactionWriter(int transactionType, map<string, string> values) 
+{
+    ofstream myfile;
+    myfile.open ("dailyTransactionFile.txt");
+    string line = transactionType + " ";
+    switch (transactionType)
+    {
+        case 3: 
+            line += stringFormatter(values.at("item"), 25);
+            line += " ";
+            line += stringFormatter(values.at("seller"), 15);
+            line += " ";
+            line += numberFormatter(values.at("days"),3);
+            line += " ";
+            line += stringFormatter(values.at("minimum_bid"), 5);
+            line += "\n";
+            break;
+        case 4: 
+            line += stringFormatter(values.at("item"), 25);
+            line += " ";
+            line += stringFormatter(values.at("seller"), 15);
+            line += " ";
+            line += stringFormatter(values.at("buyer"), 15);
+            line += " ";
+            line += stringFormatter(values.at("bid"), 5);
+            line += "\n";
+            break;
+        case 5: 
+            line += stringFormatter(values.at("buyer"), 15);
+            line += " ";
+            line += stringFormatter(values.at("seller"), 15);
+            line += " ";
+            line += numberFormatter(values.at("refund_credit"),9);
+            line += "\n";
+            break;
+        default:
+            line += stringFormatter(values.at("username"), 15);
+            line += " ";
+            line += values.at("user_type");
+            line += " ";
+            line += numberFormatter(values.at("credit_balance"),9);
+            line += "\n";
+            break;
+    }
+    myfile << line;
+    myfile.close();
+}
+// Inputs: username: username of the user, type: the acronym for the user's account type(FS - full-standard),
+//  credit: the amount of credit on the user's account
+// Outputs: None
+void TransactionWriter::currentUsersWriter(string username, string type, float credit) 
+{
+
+}
+// Inputs: name: Name of item, seller: username of seller, winningUser: username of user with current highest bid,
+//  winningBid: value of current highest bid, daysLeft: Number of days left before auction closes
+// Outputs: None
+void TransactionWriter::availableItemsWriter(string name, string seller, string winningUser, string winningBid, int daysLeft) 
+{
+
+}
