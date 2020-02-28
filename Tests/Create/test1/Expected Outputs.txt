@@ -1,0 +1,6 @@
+# Create Test 1: Name limited to 15 chars
+Error: Username must be less than 15 characters
+
+# Create Test 2: Unique usernames
+Error: This Username is already taken please try a different one
+
