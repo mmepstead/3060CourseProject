@@ -3,3 +3,5 @@ testusername4
 6
 thisusernameover15characters
 1
+1
+0
