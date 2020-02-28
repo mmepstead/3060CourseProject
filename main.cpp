@@ -27,11 +27,16 @@ Running this program
 #include <string>
 #include <fstream>
 #include "./Authentication/Authentication.h"
+//#include "./Authentication/Authentication.cpp"
 #include "./Users/User.h"
+//#include "./Users/User.cpp"
 #include "./Users/BuyStandard/BuyStandard.h"
 #include "./Users/SellStandard/SellStandard.h"
 #include "./Users/FullStandard/FullStandard.h"
 #include "./Users/Admin/Admin.h"
+//#include "./Users/Admin/Admin.cpp"
+#include "./TransactionWriter/TransactionWriter.h"
+//#include "./TransactionWriter/TransactionWriter.cpp"
 
 using namespace std;
 
@@ -149,7 +154,7 @@ void state2Buy(string username)
         case 1:  loop = false;
             break;
         case 3:
-        { 
+        {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
             cin >> credit;
@@ -191,7 +196,7 @@ void state2Sell(string username)
         case 1:  loop = false;
             break;
         case 3:
-        { 
+        {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
             cin >> credit;
@@ -237,7 +242,7 @@ void state2Full(string username)
         case 1:  loop = false;
             break;
         case 3:
-        { 
+        {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
             cin >> credit;
@@ -302,6 +307,28 @@ void state2Admin(string username)
         case 5:
             advertiseItem(user);
             break;
+        case 6:
+        {
+            string username;
+            int userAccntType;
+            cout << "Enter a username: ";
+            cin >> username;
+            cout << "Enter account type:" << endl << "1 = BuyStandard" << endl << "2 = SellStandard" << endl << "3 = FullStandard" << endl << "4 = Admin" << endl;
+            cin >> userAccntType;
+            user.create(username,userAccntType);
+            break;
+        }
+
+
+        case 7:
+        {
+          string username;
+          cout << "Enter the username to delete: ";
+          cin >> username;
+          user.deleteUser(username);
+          break;
+        }
+
         //Default case
         default:
             cout << "Error: Invalid transaction code" << endl;
@@ -310,7 +337,7 @@ void state2Admin(string username)
     }
 }
 
-bool userExists(string username) 
+bool userExists(string username)
 {
     string line;
     ifstream myfile(current_users_file.c_str());
@@ -333,7 +360,7 @@ bool userExists(string username)
     cout << "Error: Unable to open file" << endl;
 }
 
-bool itemNameTaken(string itemName) 
+bool itemNameTaken(string itemName)
 {
     string line;
     ifstream myfile("availableItems.txt");
@@ -355,7 +382,7 @@ bool itemNameTaken(string itemName)
     }
     cout << "Error: Unable to open file" << endl;
 }
-void advertiseItem(User user) 
+void advertiseItem(User user)
 {
     string itemName;
     float minBid;
@@ -369,7 +396,7 @@ void advertiseItem(User user)
     }
     cout << "Enter minimum bid for the item:" << endl;
     cin >> minBid;
-    if(minBid < 0 || minBid > 999.99) 
+    if(minBid < 0 || minBid > 999.99)
     {
         cout << "Error: Minimum bid must be between $0 and $999.99" << endl;
         return;
