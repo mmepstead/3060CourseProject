@@ -1,1 +1,1 @@
-This is to test the addCredit function. Ny using the function on an existing user then a non existing user.
+# Add Credit Test 1: Username must be valid
