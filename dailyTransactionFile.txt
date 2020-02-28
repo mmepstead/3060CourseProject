@@ -7,3 +7,4 @@
 05 testusername1   testusername2   150.000000
 04 imaginaryitem2             imaginaryseller testusername4   101.000000
 05 testusername1   testusername2   014.000000
+04 imaginaryitem              imaginaryseller testusername4   101.000000

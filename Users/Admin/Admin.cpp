@@ -1,15 +1,10 @@
 #include "../User.h"
 #include "Admin.h"
-<<<<<<< HEAD
 #include <string>
 #include <map> 
 #include <fstream>
 #include "../../TransactionWriter/TransactionWriter.h"
-=======
-#include "../../TransactionWriter/TransactionWriter.h"
-#include <map>
 
->>>>>>> c20fca12ec86fca7d745624d43cccad093891675
 // Inputs: string username: username to add credit to, float credit: amount to add to account
 // Outputs: float for new balance
 float Admin::addCredit(string username, float credit) {
@@ -35,7 +30,6 @@ float Admin::addCredit(string username, float credit) {
 			return creditBalance;
 		}
 }
-<<<<<<< HEAD
 void Admin::bid(string item, float amount)
 	{
 		TransactionWriter bidWriter;
@@ -97,7 +91,6 @@ void Admin::bid(string item, float amount)
 		}
 		
 	}
-=======
 
 void Admin::create(string username, int type)
 {
@@ -120,4 +113,3 @@ void Admin::deleteUser(string username)
   writer.dailyTransactionWriter(1, values);
   cout << "Successfully deleted user: " << username << endl;
 }
->>>>>>> c20fca12ec86fca7d745624d43cccad093891675
