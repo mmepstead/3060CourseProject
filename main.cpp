@@ -156,6 +156,17 @@ void state2Buy(string username)
             user.addCredit(credit);
             break;
         }
+		case 4:
+		{
+			string item;
+			float bid;
+			cout << "Enter the name of the item you wish to bid on: " << endl;
+			cin >> item;
+			cout << "Enter the amount you wish to bid: " << endl;
+			cin >> bid;
+			user.bid(item, bid);
+			break;
+		}
         //Default case
         default:
             cout << "Error: Invalid transaction code" << endl;
@@ -244,6 +255,17 @@ void state2Full(string username)
             user.addCredit(credit);
             break;
         }
+		case 4:
+		{
+			string item;
+			float bid;
+			cout << "Enter the name of the item you wish to bid on: " << endl;
+			cin >> item;
+			cout << "Enter the amount you wish to bid: " << endl;
+			cin >> bid;
+			user.bid(item, bid);
+			break;
+		}
         case 5:
             advertiseItem(user);
             break;
@@ -284,6 +306,34 @@ void state2Admin(string username)
         {
         case 1:  loop = false;
             break;
+		case 2: 
+		{
+			string buy, sell;
+			float money;
+			cout << "Please enter the username of the buyer: " << endl;
+			cin >> buy;
+			cout << "Please enter the username of the seller: " << endl;
+			cin >> sell;
+			cout << "Please enter the amount to be refunded: " << endl;
+			cin >> money;
+			if(!userExists(buy) && !userExists(sell))
+			{
+				cout << "neither the buyer or the seller exists" << endl;
+			}
+			else if (!userExists(sell))
+			{
+				cout << "seller does not exist" << endl;
+			}
+			else if(!userExists(buy))
+			{
+				cout << "buyer does not exist" << endl;
+			}	
+			else 
+			{
+				user.refund(buy, sell, money);
+			}
+			break;
+		}
         case 3:
         {
             string username;
@@ -299,7 +349,18 @@ void state2Admin(string username)
             }
             break;
         }
-        case 5:
+        case 4:
+		{
+			string item;
+			float bid;
+			cout << "Enter the name of the item you wish to bid on: " << endl;
+			cin >> item;
+			cout << "Enter the amount you wish to bid: " << endl;
+			cin >> bid;
+			user.bid(item, bid);
+			break;
+		}
+		case 5:
             advertiseItem(user);
             break;
         //Default case

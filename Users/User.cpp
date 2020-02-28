@@ -3,6 +3,7 @@
 #include<iostream>
 #include "User.h"
 #include <map> 
+#include <fstream>
 #include "../TransactionWriter/TransactionWriter.h"
 using namespace std;
 
@@ -11,7 +12,14 @@ using namespace std;
 	// Outputs: None
 	void User::refund(string buyer, string seller, float credit)
 	{
-
+		
+			TransactionWriter writer;
+			map<string, string> values;
+			values.insert(pair<string, string>("buyer", buyer));
+			values.insert(pair<string, string>("seller", seller)); 
+			values.insert(pair<string, string>("refund_credit", to_string(credit)));
+			writer.dailyTransactionWriter(5, values);
+			cout << "the credit has been refunded" << endl;
 	}
 	// Inputs: String itemName: name of item, float minBid: minimum bid
 	// int days: number of days aution lasts
@@ -66,4 +74,72 @@ using namespace std;
 			writer.dailyTransactionWriter(6, values);
 			return creditBalance;
 		}
-}
+	}
+	void User::bid(string item, float amount)
+	{
+		TransactionWriter bidWriter;
+		map<string, string> values;
+		ifstream inFile;
+		inFile.open ("availableItems.txt", ios_base::app);
+		if (inFile.is_open()) 
+		{
+			string arr = "";
+			string name = "";
+			string seller = "";
+			string curBid = "";
+			char line[65];
+			int spaceCount = 0;
+			bool foundItem = false;
+			while (getline(inFile, arr)) 
+			{
+				spaceCount = 0;
+				name = "";
+				curBid = "";
+				seller = "";
+				for(int i=0; i<arr.size();i++){
+					
+					if (arr[i] == 32){
+						spaceCount +=1;
+					}
+					if (spaceCount == 0){
+						name+=arr[i];
+					}
+					else if (spaceCount == 1)
+					{
+						seller += arr[i];
+					}
+					else if (spaceCount == 4){
+						curBid+=arr[i];
+					}
+				}
+				if (name == item)
+				{
+					foundItem = true;
+					break;
+				}
+			}
+			inFile.close();
+			if (foundItem)
+			{
+				float newBid = atof(curBid.c_str());
+				if ((amount/newBid) <= 1.05)
+				{
+					cout << "bid is not large enough" << endl;
+				}
+				else
+				{
+					values.insert(pair<string, string>("item", item));
+					values.insert(pair<string, string>("seller", seller)); 
+					values.insert(pair<string, string>("buyer", getUsername()));
+					values.insert(pair<string, string>("bid", to_string(amount)));  
+					bidWriter.dailyTransactionWriter(4, values);
+					cout << "you have successfully bid on the item" << endl;
+				}
+			}
+			else
+			{
+				cout << "Item was not found" << endl;
+			}
+		}
+		
+	}

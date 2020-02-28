@@ -21,4 +21,5 @@ public:
 	// Inputs: string username: username to add credit to, float credit: amount to add to account
 	// Outputs: float for new balance
 	float addCredit(string username, float credit);
+	void bid(string item, float amount);
 };
