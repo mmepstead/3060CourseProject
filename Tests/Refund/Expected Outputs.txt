@@ -1,8 +1,0 @@
-# Refund Test 1: Both buyer and seller must exist
-Successfully executed refund!
-Error: This buyer account does not exist
-Error: This seller account does not exist
-Error: Neither of these accounts exist
-
-# Refund Test 2: Buyer account can't go over 999,999
-Error: Buyer account is full credit

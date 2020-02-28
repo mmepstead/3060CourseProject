@@ -1,8 +1,6 @@
 1
 testusername4
-5
+2
 asd
-1
-5
-1
-0
+testusername2
+15

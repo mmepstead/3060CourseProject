@@ -1,38 +1,4 @@
-
-# Login Test 1: No actions before login
-Bid('item', 100)
-Logout()
-Refund('buyer', 'seller', 10)
-AddCredit(10)
-Advertise('item', 10)
-Delete('user')
-Create('user')
-
-# Login Test 2: Usernames
-Login('validUsername')
-Login('invalidUsername')
-
-# Login Test 3: No other logins
-Login('alreadyLoggedInUser')
-
-#Login Test 4: Only valid actions
-
-# in non-admin account
-Bid('item', 100)
-Logout()
-Refund('buyer', 'seller', 10)
-AddCredit(10)
-Advertise('item', 10)
-Delete('user')
-Create('user')
-
-# in admin account
-Bid('item', 100)
-Logout()
-Refund('buyer', 'seller', 10)
-AddCredit(10)
-Advertise('item', 10)
-Delete('user')
-Create('user')
-
-
+1
+testusername1
+1
+0

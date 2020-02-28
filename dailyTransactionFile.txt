@@ -8,3 +8,5 @@
 04 imaginaryitem2             imaginaryseller testusername4   101.000000
 05 testusername1   testusername2   014.000000
 04 imaginaryitem              imaginaryseller testusername4   101.000000
+03 asd                       testusername4   005 001.00
+05 testusername1   testusername2   015.000000
