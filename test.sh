@@ -10,7 +10,9 @@ do
     if diff --strip-trailing-cr $output $expected_output
     then
         echo "Test Passed!" > $results
+        diff --strip-trailing-cr $output $expected_output >> $results
     else
         echo "Test Failed!" > $results
+        diff --strip-trailing-cr $output $expected_output >> $results
     fi
 done

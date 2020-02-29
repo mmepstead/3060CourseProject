@@ -34,9 +34,7 @@ Running this program
 #include "./Users/SellStandard/SellStandard.h"
 #include "./Users/FullStandard/FullStandard.h"
 #include "./Users/Admin/Admin.h"
-//#include "./Users/Admin/Admin.cpp"
 #include "./TransactionWriter/TransactionWriter.h"
-//#include "./TransactionWriter/TransactionWriter.cpp"
 
 using namespace std;
 
@@ -157,8 +155,16 @@ void state2Buy(string username)
         {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
-            cin >> credit;
-            user.addCredit(credit);
+            if(cin >> credit) 
+            {
+                user.addCredit(credit);
+            }
+            else
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Error: Invalid input" << endl;
+            }
             break;
         }
 		case 4:
@@ -168,8 +174,17 @@ void state2Buy(string username)
 			cout << "Enter the name of the item you wish to bid on: " << endl;
 			cin >> item;
 			cout << "Enter the amount you wish to bid: " << endl;
-			cin >> bid;
-			user.bid(item, bid);
+			if(cin >> bid)
+            {
+
+                user.bid(item, bid);
+            }
+			else
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Error: Invalid input" << endl;
+            }
 			break;
 		}
         //Default case
@@ -210,8 +225,16 @@ void state2Sell(string username)
         {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
-            cin >> credit;
-            user.addCredit(credit);
+            if(cin >> credit) 
+            {
+                user.addCredit(credit);
+            }
+            else
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Error: Invalid input" << endl;
+            }
             break;
         }
         case 4:
@@ -256,8 +279,16 @@ void state2Full(string username)
         {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
-            cin >> credit;
-            user.addCredit(credit);
+           if(cin >> credit) 
+            {
+                user.addCredit(credit);
+            }
+            else
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Error: Invalid input" << endl;
+            }
             break;
         }
 		case 4:
@@ -267,8 +298,16 @@ void state2Full(string username)
 			cout << "Enter the name of the item you wish to bid on: " << endl;
 			cin >> item;
 			cout << "Enter the amount you wish to bid: " << endl;
-			cin >> bid;
-			user.bid(item, bid);
+			if(cin >> bid)
+            {
+                user.bid(item, bid);
+            }
+			else
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Error: Invalid input" << endl;
+            }
 			break;
 		}
         case 5:
@@ -347,10 +386,24 @@ void state2Admin(string username)
             cout << "Enter username of user to add credit to:" << endl;
             cin >> username;
             // Quick way to check if user exists
-            if(userExists(username)) {
+            if(userExists(username)) 
+            {
                 cout << "Enter amount of credit to add:" << endl;
-                cin >> credit;
-                user.addCredit(username, credit);
+                if(cin >> credit) 
+                {
+                    user.addCredit(username, credit);
+                }
+                else
+                {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "Error: Invalid input" << endl;
+                }
+                
+            }
+            else
+            {
+                cout << "Error: User with that username does not exist" << endl;
             }
             break;
         }
@@ -361,8 +414,17 @@ void state2Admin(string username)
 			cout << "Enter the name of the item you wish to bid on: " << endl;
 			cin >> item;
 			cout << "Enter the amount you wish to bid: " << endl;
-			cin >> bid;
-			user.bid(item, bid);
+			if(cin >> bid)
+            {
+                user.bid(item, bid);
+            }
+			else
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Error: Invalid input" << endl;
+            }
+            
 			break;
 		}
 		case 5:
@@ -449,21 +511,36 @@ void advertiseItem(User user)
     float minBid;
     int days;
     cout << "Enter the name of the item you want to advertise:" << endl;
-    cin >> itemName;
+    if(!(cin >> itemName))
+    {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Error: Invalid input" << endl;
+    }
     if(itemNameTaken(itemName))
     {
         cout << "Error: An item with that name already exists" << endl;
         return;
     }
     cout << "Enter minimum bid for the item:" << endl;
-    cin >> minBid;
+    if(!(cin >> minBid))
+    {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Error: Invalid input" << endl;
+    }
     if(minBid < 0 || minBid > 999.99)
     {
         cout << "Error: Minimum bid must be between $0 and $999.99" << endl;
         return;
     }
     cout << "Enter number of days for item to be auctioned:" << endl;
-    cin >> days;
+    if(!(cin >> days))
+    {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Error: Invalid input" << endl;
+    }
     if(days < 0 || days > 100)
     {
         cout << "Error: Number of days must be between 0 and 100" << endl;

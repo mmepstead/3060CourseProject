@@ -1,0 +1,68 @@
+Test Failed!
+1,47c1,17
+< Welcome to the auction website. Please select an option from the following:
+< Login -- 1
+< Exit -- 0
+< -->Enter Username: Successfully Logged In!
+< Account Type: Sell Standard
+< Please choose from one of the following options:
+< Logout -- 1 
+< Refund -- 2 
+< Add Credit -- 3 
+< Advertise -- 4 
+< -->Please enter the amount of credit you want to add to your account
+< Credit of 500 successfully added to account testusername2
+< Current balance: 500
+< Account Type: Sell Standard
+< Please choose from one of the following options:
+< Logout -- 1 
+< Refund -- 2 
+< Add Credit -- 3 
+< Advertise -- 4 
+< -->Please enter the amount of credit you want to add to your account
+< Invalid amount.
+< Account Type: Sell Standard
+< Please choose from one of the following options:
+< Logout -- 1 
+< Refund -- 2 
+< Add Credit -- 3 
+< Advertise -- 4 
+< -->Please enter the amount of credit you want to add to your account
+< Error: Invalid input
+< Account Type: Sell Standard
+< Please choose from one of the following options:
+< Logout -- 1 
+< Refund -- 2 
+< Add Credit -- 3 
+< Advertise -- 4 
+< -->Please enter the amount of credit you want to add to your account
+< Error: Adding amount 501 will bring account balance above 999.99.
+< Account Type: Sell Standard
+< Please choose from one of the following options:
+< Logout -- 1 
+< Refund -- 2 
+< Add Credit -- 3 
+< Advertise -- 4 
+< -->Welcome to the auction website. Please select an option from the following:
+< Login -- 1
+< Exit -- 0
+< -->
+\ No newline at end of file
+---
+> # Bid Test 1: Item name must be of an existing item
+> Successfully bid on item!
+> Error: Item with that name does not exist
+> 
+> # Bid Test 2: New bid higher than previous highest
+> Error: Bid must be higher than the previous highest bet
+> Successfully placed bid!
+> Error: Bid must be a number
+> 
+> # Bid Test 3: New bid at least 5% higher than pervious highest
+> # On admin
+> Successfully placed bid!
+> # On other accounts
+> Error: Bid must be at least 5% higher than previous highest
+> # On any account
+> Successfully placed bid!
+> 

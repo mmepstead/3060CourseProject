@@ -1,0 +1,45 @@
+Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->Enter Username: Successfully Logged In!
+Account Type: Full Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+-->Enter the name of the item you wish to bid on: 
+Enter the amount you wish to bid: 
+Item was not found
+Account Type: Full Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+-->Enter the name of the item you wish to bid on: 
+Enter the amount you wish to bid: 
+Error: Invalid input
+Account Type: Full Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+-->Enter the name of the item you wish to bid on: 
+Enter the amount you wish to bid: 
+Item was not found
+Account Type: Full Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+-->Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->

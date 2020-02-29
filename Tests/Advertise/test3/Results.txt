@@ -1,0 +1,53 @@
+Test Failed!
+1,15c1,2
+< Welcome to the auction website. Please select an option from the following:
+< Login -- 1
+< Exit -- 0
+< -->Enter Username: Successfully Logged In!
+< Account Type: Full Standard
+< Please choose from one of the following options:
+< Logout -- 1 
+< Refund -- 2 
+< Add Credit -- 3 
+< Bid -- 4 
+< Advertise -- 5 
+< -->Enter the name of the item you want to advertise:
+< Enter minimum bid for the item:
+< Enter number of days for item to be auctioned:
+< Error: Invalid input
+---
+> # Advertise Test 1: Max price
+> Error: Maximum price is 999.99
+17,31c4,18
+< Account Type: Full Standard
+< Please choose from one of the following options:
+< Logout -- 1 
+< Refund -- 2 
+< Add Credit -- 3 
+< Bid -- 4 
+< Advertise -- 5 
+< -->Welcome to the auction website. Please select an option from the following:
+< Login -- 1
+< Exit -- 0
+< -->Enter Username: Error: A user with that username does not exist
+< Welcome to the auction website. Please select an option from the following:
+< Login -- 1
+< Exit -- 0
+< -->
+\ No newline at end of file
+---
+> Error: Item price must be a number
+> Error: Item price must be non-negative
+> 
+> # Advertise Test 2: Max item name
+> Error: Item name must be 25 characters or less
+> Successfully advertised item!
+> 
+> # Advertise Test 3: Max auction days
+> Error: Maximum number of auction days is 100
+> Successfully advertised item!
+> Error: Maximum number of auction days must be non-negative
+> Error: Maximum number of auction days must be a number
+> 
+> # Advertise Test 4: One advertisement per session
+> Error: You have already advertised your one item for this session

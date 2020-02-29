@@ -1,0 +1,21 @@
+Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->Enter Username: Successfully Logged In!
+Account Type: Sell Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Advertise -- 4 
+-->Error: Invalid transaction code
+Account Type: Sell Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Advertise -- 4 
+-->Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->

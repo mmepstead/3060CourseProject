@@ -1,0 +1,4 @@
+Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->

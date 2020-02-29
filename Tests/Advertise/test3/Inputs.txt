@@ -1,8 +1,8 @@
 1
 testusername3
-4
+5
 Itemnamethatisover25characterslong
-4
+5
 validItemName
 1
 1
