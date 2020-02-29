@@ -479,7 +479,13 @@ void state2Admin(string username)
           string username;
           cout << "Enter the username to delete: ";
           cin >> username;
+          if(username != user.getUsername())
+          {
           user.deleteUser(username);
+        }else
+        {
+          cout << "Error cannot delete self" << endl;
+        }
           break;
         }
 
