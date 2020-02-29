@@ -1,0 +1,1 @@
+After an admin login, all transactions are accepted

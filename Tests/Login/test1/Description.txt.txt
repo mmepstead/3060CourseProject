@@ -1,0 +1,1 @@
+No transaction other than login should be accepted before a login

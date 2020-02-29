@@ -1,0 +1,1 @@
+After a non-admin login, only unprivileged transactions are accepted
