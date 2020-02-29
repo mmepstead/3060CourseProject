@@ -1,8 +1,5 @@
 Test Failed!
-1,8c1,11
-< Welcome to the auction website. Please select an option from the following:
-< Login -- 1
-< Exit -- 0
+4,8c4
 < -->Error: Invalid transaction code
 < Welcome to the auction website. Please select an option from the following:
 < Login -- 1
@@ -10,15 +7,4 @@ Test Failed!
 < -->
 \ No newline at end of file
 ---
-> # Delete Test 1: Username must be of existing user
-> Successfully deleted user!
-> Error: No user exists with that username please try again
-> Error: You can't delete your own account
-> 
-> # Delete Test 2: No more transaction on a deleted user's items
-> Error: This item belongs to a deleted user and is no longer taking bids
-> 
-> # Delete Test 3: Existing bids deleted
-> Successfully deleted user!
-> Successfully deleted bids!
-\ No newline at end of file
+> -->

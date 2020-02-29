@@ -1,14 +1,1 @@
-Test Failed!
-1,8c1,2
-< Welcome to the auction website. Please select an option from the following:
-< Login -- 1
-< Exit -- 0
-< -->Error: Invalid transaction code
-< Welcome to the auction website. Please select an option from the following:
-< Login -- 1
-< Exit -- 0
-< -->
-\ No newline at end of file
----
-> Error: Invalid transaction code
-> 
+Test Passed!
