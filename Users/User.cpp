@@ -5,6 +5,7 @@
 #include <map> 
 #include <fstream>
 #include "../TransactionWriter/TransactionWriter.h"
+#include "../common.h"
 using namespace std;
 
 	// Inputs: String buyer: username of buyer, String seller: username of seller,
@@ -80,7 +81,7 @@ using namespace std;
 		TransactionWriter bidWriter;
 		map<string, string> values;
 		ifstream inFile;
-		inFile.open ("availableItems.txt", ios_base::app);
+		inFile.open (available_items_file, ios_base::app);
 		if (inFile.is_open()) 
 		{
 			string arr = "";

@@ -19,11 +19,38 @@ Refund -- 2
 Add Credit -- 3 
 Bid -- 4 
 Advertise -- 5 
+-->Enter the name of the item you want to advertise:
+Enter minimum bid for the item:
+Error: Invalid input
+Account Type: Full Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+-->Enter the name of the item you want to advertise:
+Enter minimum bid for the item:
+Error: Minimum bid must be between $0 and $999.99
+Account Type: Full Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+-->Enter the name of the item you want to advertise:
+Enter minimum bid for the item:
+Enter number of days for item to be auctioned:
+Successfully advertised item!
+Account Type: Full Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
 -->Welcome to the auction website. Please select an option from the following:
-Login -- 1
-Exit -- 0
--->Error: Invalid transaction code
-Welcome to the auction website. Please select an option from the following:
 Login -- 1
 Exit -- 0
 -->

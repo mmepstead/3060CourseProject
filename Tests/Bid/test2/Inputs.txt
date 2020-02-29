@@ -5,7 +5,10 @@ nonexistantItem
 1
 4
 imaginaryitem
-1
+testingchars
+4
+imaginaryitem
+300
 1
 0
 

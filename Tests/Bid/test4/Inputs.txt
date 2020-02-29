@@ -2,10 +2,10 @@
 testusername3
 4
 imaginaryitem
-10.10
+101
 4
 imaginaryitem
-10.50
+110
 1
 0
 

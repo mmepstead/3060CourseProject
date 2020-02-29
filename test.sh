@@ -6,7 +6,7 @@ do
     expected_output="$(dirname "$file")/ExpectedOutputs.txt"
     results="$(dirname "$file")/Results.txt"
     echo "$file"
-    ../auction ../currentUsers.txt < $file > $output
+    ../auction ../currentUsers.txt ../dailyTransactionFile.txt ../availableItems.txt  < $file > $output
     if diff --strip-trailing-cr $output $expected_output
     then
         echo "Test Passed!" > $results

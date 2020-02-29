@@ -3,7 +3,7 @@ testusername4
 3
 invalidusername
 3
-testusername
+testusername1
 500
 1
 0

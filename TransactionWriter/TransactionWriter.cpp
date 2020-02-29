@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "../common.h"
 string TransactionWriter::stringFormatter(string input, int limit) 
 {
     string result = input;
@@ -27,7 +28,7 @@ void TransactionWriter::dailyTransactionWriter(int transactionType, map<string, 
 {
     string line = "";
     ofstream myfile;
-    myfile.open ("dailyTransactionFile.txt", ios_base::app);
+    myfile.open (daily_transaction_file, ios_base::app);
     line += "0";
     line += to_string(transactionType);
     line += " ";

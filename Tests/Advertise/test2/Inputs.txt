@@ -3,15 +3,12 @@ testusername3
 5
 item
 1000
-1
 5
 item
 testingchars
-1
 5
 item
 -1000
-1
 5
 item
 999.99

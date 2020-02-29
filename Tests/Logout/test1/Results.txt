@@ -1,15 +1,1 @@
-Test Failed!
-1,8c1,3
-< Welcome to the auction website. Please select an option from the following:
-< Login -- 1
-< Exit -- 0
-< -->Error: Invalid transaction code
-< Welcome to the auction website. Please select an option from the following:
-< Login -- 1
-< Exit -- 0
-< -->
-\ No newline at end of file
----
-> # Logout Test 1: Only accepted after login
-> Successfully logged out!
-> Error: account needs to be logged in first
+Test Passed!

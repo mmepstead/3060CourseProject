@@ -35,7 +35,6 @@ Advertise -- 5
 Enter minimum bid for the item:
 Enter number of days for item to be auctioned:
 Error: Invalid input
-Successfully advertised item!
 Account Type: Full Standard
 Please choose from one of the following options:
 Logout -- 1 

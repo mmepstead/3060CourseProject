@@ -1,13 +1,10 @@
 1
-testusername3
+testusername4
 4
 imaginaryitem
-9
+100
 4
 imaginaryitem
-testingchars
-4
-imaginaryitem
-11
+101
 1
 0

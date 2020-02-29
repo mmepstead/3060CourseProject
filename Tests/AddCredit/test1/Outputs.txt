@@ -23,17 +23,9 @@ Advertise -- 5
 Create User -- 6 
 Delete User -- 7 
 -->Enter username of user to add credit to:
-Error: User with that username does not exist
-Account Type: Admin
-Please choose from one of the following options:
-Logout -- 1 
-Refund -- 2 
-Add Credit -- 3 
-Bid -- 4 
-Advertise -- 5 
-Create User -- 6 
-Delete User -- 7 
--->Error: Invalid transaction code
+Enter amount of credit to add:
+Credit of 500 successfully added to account testusername1
+Current balance: 500
 Account Type: Admin
 Please choose from one of the following options:
 Logout -- 1 

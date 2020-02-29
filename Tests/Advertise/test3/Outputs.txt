@@ -10,9 +10,17 @@ Add Credit -- 3
 Bid -- 4 
 Advertise -- 5 
 -->Enter the name of the item you want to advertise:
+Error: Item name must be less than or equal to 25 characters
+Account Type: Full Standard
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+-->Enter the name of the item you want to advertise:
 Enter minimum bid for the item:
 Enter number of days for item to be auctioned:
-Error: Invalid input
 Successfully advertised item!
 Account Type: Full Standard
 Please choose from one of the following options:
@@ -22,10 +30,6 @@ Add Credit -- 3
 Bid -- 4 
 Advertise -- 5 
 -->Welcome to the auction website. Please select an option from the following:
-Login -- 1
-Exit -- 0
--->Enter Username: Error: A user with that username does not exist
-Welcome to the auction website. Please select an option from the following:
 Login -- 1
 Exit -- 0
 -->

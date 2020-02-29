@@ -4,7 +4,7 @@
 #include <map> 
 #include <fstream>
 #include "../../TransactionWriter/TransactionWriter.h"
-
+#include "../../common.h"
 // Inputs: string username: username to add credit to, float credit: amount to add to account
 // Outputs: float for new balance
 float Admin::addCredit(string username, float credit) {
@@ -35,7 +35,7 @@ void Admin::bid(string item, float amount)
 		TransactionWriter bidWriter;
 		map<string, string> values;
 		ifstream inFile;
-		inFile.open ("availableItems.txt", ios_base::app);
+		inFile.open (available_items_file, ios_base::app);
 		if (inFile.is_open()) 
 		{
 			string arr = "";
@@ -76,6 +76,12 @@ void Admin::bid(string item, float amount)
 			inFile.close();
 			if (foundItem)
 			{
+				if (amount < atof(curBid.c_str()))
+				{
+					cout << curBid << endl;
+					cout << "Error: Bid was too low" << endl;
+					return;
+				}
 				float newBid = atof(curBid.c_str());
 					values.insert(pair<string, string>("item", item));
 					values.insert(pair<string, string>("seller", seller)); 

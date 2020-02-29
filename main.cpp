@@ -35,7 +35,7 @@ Running this program
 #include "./Users/FullStandard/FullStandard.h"
 #include "./Users/Admin/Admin.h"
 #include "./TransactionWriter/TransactionWriter.h"
-
+#include "common.h"
 using namespace std;
 
 void state0();
@@ -47,11 +47,15 @@ void advertiseItem(User user);
 bool itemNameTaken(string itemName);
 bool userExists(string username);
 string current_users_file;
+string daily_transaction_file;
+string available_items_file;
 // Inputs: None
 // Outputs: Int
 int main(int argc, char *argv[])
 {
     current_users_file = argv[1];
+    daily_transaction_file = argv[2];
+    available_items_file = argv[3];
     state0();
     return 0;
 }
@@ -78,7 +82,14 @@ void state0()
         cout << "-->";
 
         //Take in user input
-        cin >> transaction;
+        //Take user input
+        if(!(cin >> transaction))
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Error: Invalid transaction code" << endl;
+            continue;
+        }
 
         //Make choice based on user input
         switch (transaction)
@@ -144,7 +155,14 @@ void state2Buy(string username)
         cout << "-->"<< endl;
 
         //Take user input
-        cin >> transaction;
+        if(!(cin >> transaction))
+        {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "Error: Invalid transaction code" << endl;
+            continue;
+        }
+
 
         //Make choice based on user input
         switch (transaction)
@@ -483,10 +501,13 @@ bool userExists(string username)
     cout << "Error: Unable to open file" << endl;
 }
 
+
+// Checks if an item name is already taken
+// Takes in an item name and returns true if it already exists in the available items file and false otherwise
 bool itemNameTaken(string itemName)
 {
     string line;
-    ifstream myfile("availableItems.txt");
+    ifstream myfile(available_items_file);
 
     if (myfile.is_open())
     {
@@ -505,6 +526,10 @@ bool itemNameTaken(string itemName)
     }
     cout << "Error: Unable to open file" << endl;
 }
+// Code to advertise an item
+// Takes in a user so we can call the method on them
+// Asks for 3 inputs from the user the name of the item, the minimum bid, and the number of days it will be posted for
+// Outputs nothing
 void advertiseItem(User user)
 {
     string itemName;
@@ -516,10 +541,16 @@ void advertiseItem(User user)
         cin.clear();
         cin.ignore(1000, '\n');
         cout << "Error: Invalid input" << endl;
+        return;
     }
     if(itemNameTaken(itemName))
     {
         cout << "Error: An item with that name already exists" << endl;
+        return;
+    }
+    if(itemName.length() >= 25)
+    {
+        cout << "Error: Item name must be less than or equal to 25 characters" << endl;
         return;
     }
     cout << "Enter minimum bid for the item:" << endl;
@@ -528,6 +559,7 @@ void advertiseItem(User user)
         cin.clear();
         cin.ignore(1000, '\n');
         cout << "Error: Invalid input" << endl;
+        return;
     }
     if(minBid < 0 || minBid > 999.99)
     {
@@ -540,6 +572,7 @@ void advertiseItem(User user)
         cin.clear();
         cin.ignore(1000, '\n');
         cout << "Error: Invalid input" << endl;
+        return;
     }
     if(days < 0 || days > 100)
     {
