@@ -463,9 +463,32 @@ void state2Admin(string username)
             cin >> username;
             if(username.length() <= 15)
             {
-              cout << "Enter account type:" << endl << "1 = BuyStandard" << endl << "2 = SellStandard" << endl << "3 = FullStandard" << endl << "4 = Admin" << endl;
-              cin >> userAccntType;
-              user.create(username,userAccntType);
+              string line;
+              ifstream myfile(current_users_file.c_str());
+              bool passed = true;
+
+              if (myfile.is_open())
+              {
+                  //Loop through currentUsers file
+                  while (getline(myfile, line))
+                  {
+                      //Check if username is in the file
+                      if (line.substr(0, line.find(" ")).compare(username) == 0)
+                      {
+                        cout << "Error: A user with that username already exists" << endl;
+                        passed = false;
+                      }
+                  }
+              }
+              if(passed)
+              {
+                cout << "Enter account type:" << endl << "1 = BuyStandard" << endl << "2 = SellStandard" << endl << "3 = FullStandard" << endl << "4 = Admin" << endl;
+                cin >> userAccntType;
+                user.create(username,userAccntType);
+                cout << "Successfully Created User!" << endl;
+              }
+              myfile.close();
+
             }else
             {
               cout << "Error username greater then 15 characters." << endl;
@@ -484,6 +507,7 @@ void state2Admin(string username)
 
             string line;
             ifstream myfile(current_users_file.c_str());
+            bool passed = true;
 
             if (myfile.is_open())
             {
@@ -496,11 +520,15 @@ void state2Admin(string username)
                         cout << "Successfully Deleted User!" << endl;
                         user.deleteUser(username);
                         myfile.close();
+                        passed = false;
                     }
                 }
             }
+            if(passed)
+            {
+              cout << "Error: A user with that username does not exist" << endl;
+            }
 
-            cout << "Error: A user with that username does not exist" << endl;
             myfile.close();
         }else
         {
