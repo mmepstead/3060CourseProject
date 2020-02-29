@@ -481,7 +481,27 @@ void state2Admin(string username)
           cin >> username;
           if(username != user.getUsername())
           {
-          user.deleteUser(username);
+
+            string line;
+            ifstream myfile(current_users_file.c_str());
+
+            if (myfile.is_open())
+            {
+                //Loop through currentUsers file
+                while (getline(myfile, line))
+                {
+                    //Check if username is in the file
+                    if (line.substr(0, line.find(" ")).compare(username) == 0)
+                    {
+                        cout << "Successfully Deleted User!" << endl;
+                        user.deleteUser(username);
+                        myfile.close();
+                    }
+                }
+            }
+
+            cout << "Error: A user with that username does not exist" << endl;
+            myfile.close();
         }else
         {
           cout << "Error cannot delete self" << endl;
