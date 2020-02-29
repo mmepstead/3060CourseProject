@@ -1,0 +1,1 @@
+the maximum price for an item is 999.99
