@@ -1,0 +1,1 @@
+the maximum number of days to auction is 100
