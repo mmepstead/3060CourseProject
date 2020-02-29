@@ -1,0 +1,1 @@
+new user name is limited to at most 15 characters
