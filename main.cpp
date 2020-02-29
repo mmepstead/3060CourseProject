@@ -173,7 +173,7 @@ void state2Buy(string username)
         {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
-            if(cin >> credit) 
+            if(cin >> credit)
             {
                 user.addCredit(credit);
             }
@@ -245,7 +245,7 @@ void state2Sell(string username)
         {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
-            if(cin >> credit) 
+            if(cin >> credit)
             {
                 user.addCredit(credit);
             }
@@ -299,7 +299,7 @@ void state2Full(string username)
         {
             float credit;
             cout << "Please enter the amount of credit you want to add to your account" << endl;
-           if(cin >> credit) 
+           if(cin >> credit)
             {
                 user.addCredit(credit);
             }
@@ -372,7 +372,7 @@ void state2Admin(string username)
         {
         case 1:  loop = false;
             break;
-		case 2: 
+		case 2:
 		{
 			string buy, sell;
 			float money;
@@ -395,8 +395,8 @@ void state2Admin(string username)
 			else if(!userExists(buy))
 			{
 				cout << "buyer does not exist" << endl;
-			}	
-			else 
+			}
+			else
 			{
 				//calling the function once the inputs are gathered
 				user.refund(buy, sell, money);
@@ -411,10 +411,10 @@ void state2Admin(string username)
             cout << "Enter username of user to add credit to:" << endl;
             cin >> username;
             // Quick way to check if user exists
-            if(userExists(username)) 
+            if(userExists(username))
             {
                 cout << "Enter amount of credit to add:" << endl;
-                if(cin >> credit) 
+                if(cin >> credit)
                 {
                     user.addCredit(username, credit);
                 }
@@ -424,7 +424,7 @@ void state2Admin(string username)
                     cin.ignore(1000, '\n');
                     cout << "Error: Invalid input" << endl;
                 }
-                
+
             }
             else
             {
@@ -449,7 +449,7 @@ void state2Admin(string username)
                 cin.ignore(1000, '\n');
                 cout << "Error: Invalid input" << endl;
             }
-            
+
 			break;
 		}
 		case 5:
@@ -461,9 +461,15 @@ void state2Admin(string username)
             int userAccntType;
             cout << "Enter a username: ";
             cin >> username;
-            cout << "Enter account type:" << endl << "1 = BuyStandard" << endl << "2 = SellStandard" << endl << "3 = FullStandard" << endl << "4 = Admin" << endl;
-            cin >> userAccntType;
-            user.create(username,userAccntType);
+            if(username.length() <= 15)
+            {
+              cout << "Enter account type:" << endl << "1 = BuyStandard" << endl << "2 = SellStandard" << endl << "3 = FullStandard" << endl << "4 = Admin" << endl;
+              cin >> userAccntType;
+              user.create(username,userAccntType);
+            }else
+            {
+              cout << "Error username greater then 15 characters." << endl;
+            }
             break;
         }
 
