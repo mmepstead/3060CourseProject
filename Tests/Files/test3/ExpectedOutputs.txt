@@ -1,49 +1,32 @@
-# We now read the file and see the result
-
-# NOTE: Any errors will result in no printed line
-
-# Daily Transaction File Tests 
-# On admin
-04 item                seller          user           000100.00
-
-06 user            TT 999999.00
-
-01 thisneedstobe15 TT 000000000.00
-
-02 t               TT 000000000.00
-
-05 buyer           seller          000000010.00
-
-03 item                seller        010 000100.00
-
-00 user            TT 999999.00
-
-# On full standard
-04 item                seller          user           000100.00
-
-06 user            TT 999999.00
-
-05 buyer           seller          000000010.00
-
-03 item                seller        010 000100.00
-
-00 user            TT 999999.00
-
-# On buy standard
-04 item                seller          user           000100.00
-
-06 user            TT 999999.00
-
-05 buyer           seller          000000010.00
-
-00 user            TT 999999.007
-
-# On sell standard
-
-06 user            TT 999999.00
-
-05 buyer           seller          000000010.00
-
-03 item                seller        010 000100.00
-
-00 user            TT 999999.00
+Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->Enter Username: Successfully Logged In!
+Account Type: Admin
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+Create User -- 6 
+Delete User -- 7 
+-->Enter a username: Enter account type:
+1 = BuyStandard
+2 = SellStandard
+3 = FullStandard
+4 = Admin
+Successfully created user: thisismaxlength
+Account Type: Admin
+Please choose from one of the following options:
+Logout -- 1 
+Refund -- 2 
+Add Credit -- 3 
+Bid -- 4 
+Advertise -- 5 
+Create User -- 6 
+Delete User -- 7 
+-->Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->
