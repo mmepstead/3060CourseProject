@@ -189,9 +189,11 @@ void state2Buy(string username)
 		{
 			string item;
 			float bid;
+			//take user input
 			cout << "Enter the name of the item you wish to bid on: " << endl;
 			cin >> item;
 			cout << "Enter the amount you wish to bid: " << endl;
+			//assuring correct input is entered
 			if(cin >> bid)
             {
 
@@ -313,9 +315,11 @@ void state2Full(string username)
 		{
 			string item;
 			float bid;
+			//take user input
 			cout << "Enter the name of the item you wish to bid on: " << endl;
 			cin >> item;
 			cout << "Enter the amount you wish to bid: " << endl;
+			//assuring correct input is entered
 			if(cin >> bid)
             {
                 user.bid(item, bid);
@@ -372,12 +376,14 @@ void state2Admin(string username)
 		{
 			string buy, sell;
 			float money;
+			//getting inputs
 			cout << "Please enter the username of the buyer: " << endl;
 			cin >> buy;
 			cout << "Please enter the username of the seller: " << endl;
 			cin >> sell;
 			cout << "Please enter the amount to be refunded: " << endl;
 			cin >> money;
+			//checking if either the buy doesnt exist, and if both dont exist
 			if(!userExists(buy) && !userExists(sell))
 			{
 				cout << "neither the buyer or the seller exists" << endl;
@@ -392,6 +398,7 @@ void state2Admin(string username)
 			}	
 			else 
 			{
+				//calling the function once the inputs are gathered
 				user.refund(buy, sell, money);
 			}
 			break;

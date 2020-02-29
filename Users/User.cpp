@@ -14,12 +14,12 @@ using namespace std;
 	void User::refund(string buyer, string seller, float credit)
 	{
 		
-			TransactionWriter writer;
+			TransactionWriter writer; //simple writer
 			map<string, string> values;
-			values.insert(pair<string, string>("buyer", buyer));
+			values.insert(pair<string, string>("buyer", buyer));//entering values into the map
 			values.insert(pair<string, string>("seller", seller)); 
 			values.insert(pair<string, string>("refund_credit", to_string(credit)));
-			writer.dailyTransactionWriter(5, values);
+			writer.dailyTransactionWriter(5, values);//writing to the file with the correct transaction number
 			cout << "the credit has been refunded" << endl;
 	}
 	// Inputs: String itemName: name of item, float minBid: minimum bid
@@ -76,28 +76,30 @@ using namespace std;
 			return creditBalance;
 		}
 	}
+	//Inputs: string for the item name, float for the amount to bid
+	//Ouputs: none
 	void User::bid(string item, float amount)
 	{
-		TransactionWriter bidWriter;
-		map<string, string> values;
+		TransactionWriter bidWriter; //creating a transaction writer
+		map<string, string> values;//map to store the values based on the case for bid (case 4)
 		ifstream inFile;
 		inFile.open (available_items_file, ios_base::app);
 		if (inFile.is_open()) 
 		{
-			string arr = "";
+			string arr = ""; //simple variable declarations
 			string name = "";
 			string seller = "";
 			string curBid = "";
 			char line[65];
 			int spaceCount = 0;
 			bool foundItem = false;
-			while (getline(inFile, arr)) 
+			while (getline(inFile, arr)) //going through the file line by line, and storing that line in the arr string
 			{
 				spaceCount = 0;
 				name = "";
 				curBid = "";
 				seller = "";
-				for(int i=0; i<arr.size();i++){
+				for(int i=0; i<arr.size();i++){ //going through the arr string as a character array and separate the individual parts based on the spaces
 					
 					if (arr[i] == 32){
 						spaceCount +=1;
@@ -115,7 +117,7 @@ using namespace std;
 				}
 				if (name == item)
 				{
-					foundItem = true;
+					foundItem = true; //changes boolean if item is found
 					break;
 				}
 			}
@@ -129,7 +131,7 @@ using namespace std;
 				}
 				else
 				{
-					values.insert(pair<string, string>("item", item));
+					values.insert(pair<string, string>("item", item));//inserting all the values into the map
 					values.insert(pair<string, string>("seller", seller)); 
 					values.insert(pair<string, string>("buyer", getUsername()));
 					values.insert(pair<string, string>("bid", to_string(amount)));  

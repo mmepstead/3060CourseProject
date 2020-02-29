@@ -1,11 +1,27 @@
-# Delete Test 1: Username must be of existing user
-Successfully deleted user!
-Error: No user exists with that username please try again
-Error: You can't delete your own account
-
-# Delete Test 2: No more transaction on a deleted user's items
-Error: This item belongs to a deleted user and is no longer taking bids
-
-# Delete Test 3: Existing bids deleted
-Successfully deleted user!
-Successfully deleted bids!
+Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->Enter Username: Successfully Logged In!
+Account Type: Admin
+Please choose from one of the following options:
+Logout -- 1
+Refund -- 2
+Add Credit -- 3
+Bid -- 4
+Advertise -- 5
+Create User -- 6
+Delete User -- 7
+-->Enter the username to delete: Successfully deleted user: testusername1
+Account Type: Admin
+Please choose from one of the following options:
+Logout -- 1
+Refund -- 2
+Add Credit -- 3
+Bid -- 4
+Advertise -- 5
+Create User -- 6
+Delete User -- 7
+-->Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->
