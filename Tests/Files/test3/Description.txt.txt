@@ -1,0 +1,10 @@
+# File Tests
+# Since we will be using the same code for writing things like usernames for all the file types we only need to test 
+#	the daily transaction file which prints all the different kinds of variables
+# Run these on every account type then logout afterwards to generate file
+Bid
+AddCredit
+Create
+Delete
+Refund
+Advertise

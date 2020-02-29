@@ -1,0 +1,1 @@
+no further transactions should be accepted on a new ticket for sale until the next session
