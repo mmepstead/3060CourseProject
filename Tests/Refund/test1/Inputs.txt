@@ -3,7 +3,6 @@ testusername4
 2
 testusername1
 asd
-testusername2
 15
 1
 0
