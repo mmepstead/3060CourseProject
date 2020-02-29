@@ -1,6 +1,27 @@
-# Create Test 1: Name limited to 15 chars
-Error: Username must be less than 15 characters
-
-# Create Test 2: Unique usernames
-Error: This Username is already taken please try a different one
-
+Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->Enter Username: Successfully Logged In!
+Account Type: Admin
+Please choose from one of the following options:
+Logout -- 1
+Refund -- 2
+Add Credit -- 3
+Bid -- 4
+Advertise -- 5
+Create User -- 6
+Delete User -- 7
+-->Enter a username: Error username greater then 15 characters.
+Account Type: Admin
+Please choose from one of the following options:
+Logout -- 1
+Refund -- 2
+Add Credit -- 3
+Bid -- 4
+Advertise -- 5
+Create User -- 6
+Delete User -- 7
+-->Welcome to the auction website. Please select an option from the following:
+Login -- 1
+Exit -- 0
+-->
