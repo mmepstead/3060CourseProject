@@ -14,7 +14,7 @@ Delete User -- 7
 -->Please enter the username of the buyer: 
 Please enter the username of the seller: 
 Please enter the amount to be refunded: 
-buyer does not exist
+seller does not exist
 Account Type: Admin
 Please choose from one of the following options:
 Logout -- 1 
