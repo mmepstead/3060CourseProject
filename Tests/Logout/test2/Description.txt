@@ -1,0 +1,1 @@
+Regular test of logout when user is logged in.

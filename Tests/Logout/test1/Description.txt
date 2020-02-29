@@ -1,0 +1,1 @@
+Attempt to logout when not logged in.

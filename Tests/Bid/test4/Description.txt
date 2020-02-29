@@ -1,0 +1,1 @@
+new bid must be at least 5% higher than the previous highest bid(this restriction does not apply in privileged mode)

@@ -1,0 +1,1 @@
+Semi-privileged transaction - only accepted when logged in any type of account except standard-sell.
